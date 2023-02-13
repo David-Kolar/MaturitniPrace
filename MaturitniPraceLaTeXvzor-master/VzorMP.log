@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2023.2.12)  12 FEB 2023 22:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2023.2.13)  13 FEB 2023 13:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -36,7 +36,7 @@ Package: babel 2021/04/26 3.58 The Babel package
 File: babel.def 2021/04/26 3.58 Babel common definitions
 \babel@savecnt=\count188
 \U@D=\dimen139
-\l@unhyphenated=\language85
+\l@unhyphenated=\language86
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
@@ -674,7 +674,7 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \bibhang=\skip82
 \blx@bcfin=\read3
 \blx@bcfout=\write5
-\blx@langwohyphens=\language86
+\blx@langwohyphens=\language87
 \c@mincomprange=\count381
 \c@maxcomprange=\count382
 \c@mincompwidth=\count383
@@ -960,12 +960,6 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2021/04/12 v1.27 mathematical typesetting tools
@@ -1161,7 +1155,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images//GJ8_logotyp.pdf, id=72, 285.065pt x 86.3225pt>
+<images//GJ8_logotyp.pdf, id=80, 285.065pt x 86.3225pt>
 File: images//GJ8_logotyp.pdf Graphic file (type pdf)
 <use images//GJ8_logotyp.pdf>
 Package pdftex.def Info: images//GJ8_logotyp.pdf  used on input line 17.
@@ -1201,7 +1195,7 @@ Overfull \hbox (1.78932pt too wide) in paragraph at lines 89--89
 []|$[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$| 
  []
 
-<./images/graf.png, id=138, 678.535pt x 524.96124pt>
+<./images/graf.png, id=148, 678.535pt x 524.96124pt>
 File: ./images/graf.png Graphic file (type png)
 <use ./images/graf.png>
 Package pdftex.def Info: ./images/graf.png  used on input line 96.
@@ -1211,13 +1205,13 @@ Package pdftex.def Info: ./images/graf.png  used on input line 96.
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 120.
+(hyperref)                than one, level fixed on input line 119.
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 126.
+nput line 129.
 [8] [9]
 
-LaTeX Warning: Empty bibliography on input line 156.
+LaTeX Warning: Empty bibliography on input line 183.
 
 (./VzorMP.gls) [10
 
@@ -1251,17 +1245,8 @@ cuted safely (allowed).
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `VzorMP.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `VzorMP.out':
-(rerunfilecheck)             Before: 6A67559EA83E0FCC44D4D150B073D8D5;2684
-(rerunfilecheck)             After:  6F3ABA5397C607C0C2E9972C2F9004B9;2843.
+Package rerunfilecheck Info: File `VzorMP.out' has not changed.
+(rerunfilecheck)             Checksum: B60980B64F384F629B4D90205296F6A0;3045.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                VzorMP
@@ -1272,13 +1257,13 @@ Package logreq Info: Writing requests to 'VzorMP.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30833 strings out of 478862
- 552489 string characters out of 5858945
- 1423076 words of memory out of 6000000
- 47951 multiletter control sequences out of 15000+600000
+ 30878 strings out of 478855
+ 552720 string characters out of 5858635
+ 1532901 words of memory out of 6000000
+ 47978 multiletter control sequences out of 15000+600000
  412602 words of font info for 61 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 106i,11n,131p,1897b,2276s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 106i,11n,131p,1897b,2446s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
@@ -1292,10 +1277,10 @@ msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 tt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
 >
-Output written on VzorMP.pdf (20 pages, 168568 bytes).
+Output written on VzorMP.pdf (20 pages, 172573 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 237 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
- 147 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 313 PDF objects out of 1000 (max. 8388607)
+ 273 compressed objects within 3 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

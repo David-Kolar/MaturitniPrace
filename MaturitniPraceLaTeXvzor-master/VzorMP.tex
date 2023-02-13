@@ -111,11 +111,14 @@ Posloupnost lze zadat různými způsoby v závislosti na povaze posloupnosti, p
 
 Jedním ze způsobů vyjádření posloupnosti je rekurentní vzorec, který definuje každý člen posloupnosti pomocí jeho předchozích členů. 
 
-Dalším způsobem vyjádření posloupnosti je pomocí vzorce, který definuje n-tý člen posloupnosti an pomocí proměnné n. Tento způsob může být užitečný třeba pro posloupnosti, které mají jednoduchý vzorec a lze je snadno definovat. To platí například pro aritmetickou nebo geometrickou posloupnost. 
+Dalším způsobem vyjádření posloupnosti je pomocí vzorce, který definuje $n$-tý člen posloupnosti an pomocí proměnné $n$. Tento způsob může být užitečný třeba pro posloupnosti, které mají jednoduchý vzorec a lze je snadno definovat. To platí například pro aritmetickou nebo geometrickou posloupnost. 
 Posloupnost lze také vyjádřit výčtem hodnot a to buď graficky, nebo pomocí tabulky.  
 
 
 	\part{Praktická část}
+\section{Generátor vzorců v Pythonu}
+Na závěr implementuji algoritmus, který jsem dokázal v předchozí kapitole.
+
 
 \section{Výpisy použitých programů}
 
@@ -123,18 +126,42 @@ Posloupnost lze také vyjádřit výčtem hodnot a to buď graficky, nebo pomoc�
 
 Výpis programu \nameref{lst:hello_world}  naleznete ve výpise \ref{lst:hello_world}.
 
-\begin{lstlisting}[title={Program hello.c}, caption={hello.c}, label={lst:hello_world}]
-#include <stdio.h>
-#define CISLO 10
+\begin{lstlisting}[title={Generator.py}, caption={generator.py}, label={lst:hello_world}]
+import sympy
+from math import comb
 
-int main(void) {
-	int i = CISLO;
+def hrubou_silou(vzorec, q, exp):
+    vzorec = vzorec.replace("q", str(q))
+    soucet = 0
+    for i in range(exp+1):
+        soucet += eval(vzorec.replace("x", str(i)))
+    return soucet
 
-	print("Hello World!\n");
-	print("%d", i);
+def spocitej_mocniny(stupen):
+    nulty_clen = "(q**(x+1) - 1)/(q - 1)"
+    stupne = [sympy.sympify(nulty_clen)]
+    for exp in range(1, stupen+1):
+        novy_clen = sympy.sympify("0")
+        for k in range(exp):
+            novy_clen += sympy.sympify(comb(exp, k)*stupne[k])
+        novy_clen = sympy.sympify(f"""(x+1)**{exp}*q**(x+1)""") - sympy.sympify("q")*novy_clen
+        novy_clen /= sympy.sympify("q - 1")
+        stupne.append(sympy.simplify(novy_clen))
+    return stupne
 
-	return (0);
-}
+
+def vyres(clen):
+    clen = sympy.sympify(clen)
+
+q = 12
+x = 4
+s = 3
+vzorec = str(spocitej_mocniny(s)[s])
+print(vzorec)
+print(eval(vzorec.replace("q", str(q)).replace("x", str(x))))
+print(hrubou_silou(f"""x**{s}*q**x""", q, x))
+
+
 \end{lstlisting}
 
 \lipsum[1]	
