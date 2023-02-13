@@ -11,6 +11,11 @@
 \place{V Českých Budějovicích}
 \skolnirok{2022/2023}
 \logo{\includegraphics[scale=1.25]{GJ8_logotyp}}
+\makeatletter
+\newcases{centercases}{\quad}
+  {\hfil$\m@th\displaystyle{##}$\hfil}
+  {$\m@th\displaystyle{##}$\hfil}{\lbrace}{.}
+\makeatother
 
 \begin{document}
 \pagenumbering{roman}                   % číslování stránek římskými číslicemi
@@ -62,12 +67,12 @@ Pro zavedené pojmu posloupnost je nutné nejprve zavést a vysvětlit obecněj�
 Funkce jsou důležitým nástrojem v matematice a používají se v mnoha různých oblastech, včetně fyziky, inženýrství, ekonomie a dalších. Lze je analyzovat pomocí různých matematických technik jako je infinitezimální počet a algebra. Nejprve zavedeme základní pojmy týkající se funkcí.
 
 
-				\subsection{Formální definice}
-Definice 1 [funkce]: Funkce na množině $\mathbb{D} \subset \mathbb{R}$ je předpis, který každému číslu z množiny  $\mathbb{D}$ přiřazuje právě jedno reálné číslo.
+				\paragraph{Definice 1 [Funkce]:}
+ Funkce na množině $\mathbb{D} \subset \mathbb{R}$ je předpis, který každému číslu z množiny  $\mathbb{D}$ přiřazuje právě jedno reálné číslo.
 
-				\subsection{Definiční obor}
+				\paragraph{Definice 2 [Definiční obor]:}
 Pokud máme funkci $f$, pak množině $D$, na které je funkce $f$ definována, se říká \emph{definiční obor} funkce $f$ a značí se $D(f)$.
-				\subsection{Obor hodnot}
+		\paragraph{Definice 3 [Obor hodnot]:}
 Obor hodnot je množina všech reálných čísel $y$, která lze dostat jako výstupní hodnotu funkce $f$, jestliže se za $x$ dosadí všechny přípustné hodnoty z $D(f)$. Obor hodnot funkce $f$ se značí $H(f)$.
 				\subsection{Zadání funkce}
 Funkci lze zadat několika způsoby, ty nejvýznamnější si ukážeme na funkci $\sin(x)$.
@@ -95,6 +100,7 @@ Graf funkce $\sin(x)$ s oborem definice $D(f) = \langle 0, 2\pi \rangle$. Pro vi
 \begin{center}
 \includegraphics[scale=0.4]{./images/graf.png}
 \end{center}
+
 		\section{Vysvětlení pojmu posloupnost}
 Posloupnost je funkce definovaná na množině přirozených čísel, což jsou celá kladná čísla (1, 2, 3 atd.). Stejně jako u funkce tedy platí, že se jedná o vztah mezi množinou vstupů a množinou možných výstupů s vlastností, že ke každému vstupu je přiřazený právě jeden výstup. Definiční obor posloupnosti může být buď konečná množina, pak se posloupnost nazývá \emph{konečná}, nebo \emph{nekonečná} množina, pak se posloupnost nazývá \emph{nekonečná}.
 		\section{Značení}
@@ -112,68 +118,148 @@ Posloupnost lze zadat různými způsoby v závislosti na povaze posloupnosti, p
 Jedním ze způsobů vyjádření posloupnosti je rekurentní vzorec, který definuje každý člen posloupnosti pomocí jeho předchozích členů. 
 
 Dalším způsobem vyjádření posloupnosti je pomocí vzorce, který definuje $n$-tý člen posloupnosti an pomocí proměnné $n$. Tento způsob může být užitečný třeba pro posloupnosti, které mají jednoduchý vzorec a lze je snadno definovat. To platí například pro aritmetickou nebo geometrickou posloupnost. 
-Posloupnost lze také vyjádřit výčtem hodnot a to buď graficky, nebo pomocí tabulky.  
+Konečnou posloupnost lze vyjádřit výčtem hodnot:
+\[(a_n)_{n=1}^k=[1, 4, 9, 16, 25]\]  
+\newpage
+Dále lze zadat konečnou posloupnost graficky. Tato metoda je užitečná pro vizualizaci posloupnosti, neboť s ní lze posloupnost lépe pochopit a interpretovat.
+\begin{center}
+\includegraphics[scale=0.4]{./images/graf_posloupnosti.png}
+
+\end{center}
+Poslední ze základních metod, jakou lze zadat konečnou posloupnost je s pomocí tabulky:
 
 
+\begin{center}
+\begin{tabular}{ | m{1cm} | m{1cm}| m{1cm} | m{1cm} |m{1cm} |m{1cm} |} 
+\hline
+  $n$ & $1$ & $2$ & $3$ & $4$ & $5$ \\
+\hline
+	$a_n$ & $1$ & $4$ & $9$ & $16$ & $25$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Vzorec pro $n$-tý člen}
+Vzorcem pro $n$-tý člen lze zadat posloupnost konečnou i nekonečnou.
+Vzorec pro $n$-tý člen vyjadřuje vztah mezi hodnotou $n$ z definičního oboru a $a_n$ z oboru hodnot. Dosazením hodnoty $n$ do tohoto vzorce lze zjistit $n$ -tý člen an posloupnosti.
+\subsubsection{Příklady:}
+Nekonečnou posloupnost lze zapsat několika způsoby:
+\[a_n = 2n + 1 \]
+
+Tento zápis nápadně připomíná formu zápisu funkce. Druhý způsob už se více blíží zápisu posloupností, jak jsme si jej definovali dříve.
+\[(2n + 1)_{n=1}^{\infty} \]
+
+Konečnou posloupnost, kde $n \le k$ potom lze zapsat kupříkladu takto:
+\[(2n + 1)_{n=1}^{k} \]
+\[a_n = 2n + 1 \quad n \le k \quad n \in \mathbb{N}\]
+\subsection{Rekurentní vzorec}
+Rekurentní vzorec určuje člen posloupnosti pomocí znalosti jednoho nebo více předcházejících členů. Tento způsob je užitečný zejména u posloupností, které mají složitý předpis a nelze je snadno definovat pomocí jediného vzorce. Známým příkladem je Fibonacciho posloupnost.
+
+Člen posloupnosti an můžeme určit jen tehdy, pokud známe členy předcházející, tedy časová složitost určení n-tého prvku je $O(n)$. 
+\subsubsection{Příklad na Fibonacciho posloupnosti:}
+Fibonacciho posloupnost, poprvé popsána v indické matematice již 200 let př. n. l., je posloupnost čísel, ve které je každé číslo, kromě prvních dvou čísel,$0$ a $1$, součtem dvou předchozích, tedy $0, 1, 1, 2, 3, 5, 8, 13, 21$ atd. 
+\[
+a_{n}=
+\begin{centercases}
+  0         & n=1 \\
+  1 		   & n=2 \\
+  a_{n-1}+ a_{n-2}& n>2
+\end{centercases}
+\]
+Tato posloupnost je sice nekonečná, nicméně pomocí rekurentního vzorce lze zadávat i konečné posloupnosti. Ukážeme si to opět na předchozím příkladu:
+\[
+a_{n}=
+\begin{centercases}
+  0         & n=1 \\
+  1 		   & n=2 \\
+  a_{n-1}+ a_{n-2}& 2<n\le10
+\end{centercases}
+\]
+\section{Vlastnosti posloupností}
+Protože je posloupnost definovaná jako funkce s definičním oborem přirozených čísel,  lze mnoho vlastností, které platí pro funkce obecně, určit i pro posloupnosti, například monotónnost nebo omezenost.
+\subsection{Monotónnost posloupnosti}
+Jednou z vlastností, kterou lze pro posloupnost určit, je monotónnost, která se týká rostoucí nebo klesající povahy jednotlivých prvků.
+\paragraph{Definice 4 [Rostoucí posloupnost]:}
+O posloupnosti se říká, že je rostoucí, jestliže je každý člen větší než předchozí.
+
+\begin{equation}
+\forall n,m \in D:n<m \Rightarrow a_n < a_m
+\end{equation}
+
+\paragraph{Definice 5 [Klesající posloupnost]:}
+Posloupnost je klesající, jestliže je každý člen menší než předchozí člen.
+
+\begin{equation}
+\forall n,m \in D:n<m \Rightarrow a_n > a_m
+\end{equation}
+
+\paragraph{Definice 6 [Nerostoucí posloupnost]:}
+O posloupnosti se říká, že je nerostoucí, jestliže je každý člen menší nebo roven předchozímu členu.
+
+\begin{equation}
+\forall n,m \in D:n<m \Rightarrow a_n \geq a_m
+\end{equation}
+
+\paragraph{Definice 7 [Neklesající posloupnost]:}
+O posloupnosti se říká, že je neklesající, jestliže je každý člen větší nebo roven předchozímu členu.
+
+\begin{equation}
+\forall n,m \in D:n<m \Rightarrow a_n \leq a_m
+\end{equation}
+\paragraph{Definice 8 [Nerostoucí posloupnost:]} O posloupnosti se říká, že je nerostoucí, jestliže je každý člen menší nebo roven předchozímu členu. Posloupnost $(a_n)$ se nazývá nerostoucí právě tehdy, když: 
+\begin{equation}
+\forall n,m \in D: n < m \Rightarrow a_n \geq a_m.
+\end{equation}
+\paragraph{Definice 9 [Neklesající posloupnost]:} O posloupnosti se říká, že je neklesající, jestliže je každý člen větší nebo roven předchozímu členu. Posloupnost $(a_n)$ se nazývá neklesající právě tehdy, když:
+\begin{equation}
+\forall n,m \in D: n < m \Rightarrow a_n \leq a_m
+\end{equation}
+\subsection{Omezenost posloupnosti}
+Další vlastností, kterou lze u posloupnosti určit, je omezenost, která se týká maximálních a minimálních hodnot, kterých mohou členy nabývat a neomezená, pokud žádná taková hranice neexistuje. To je třeba opravit.
+\paragraph{Definice 10 [Shora omezená]:}
+Posloupnost $(a_n)$ je shora omezená, jestliže existuje $h \in \mathbb{R}$ takový, že pro všechny $n \in D$ platí $a_n \leq h$.
+
+\paragraph{Definice 12 [Zdola omezená]:}
+Posloupnost $(a_n)$ je zdola omezená, jestliže existuje $d \in \mathbb{R}$ takový, že pro všechny $n \in D$ platí $a_n \geq d$.
+
+\paragraph{Definice 12 [Omezená]:}
+Posloupnost $(a_n)$ je omezená, jestliže je shora i zdola omezená, tedy existují $h,d \in \mathbb{R}$ takové, že pro všechny $n \in D$ platí $d \leq a_n \leq h$.
+\chapter{Řady}
+Řada vznikne sečtením prvků posloupnosti. Pokud je posloupnost konečná, vznikne konečná řada, pokud je posloupnost nekonečná, vznikne sečtením jejích členů nekonečná řada. V textu jsem se zatím pojmu řada vyhýbal, i když by mohl být na mnoha místech užitečný, takže ho postupně do textu zařadím.
 	\part{Praktická část}
-\section{Generátor vzorců v Pythonu}
-Na závěr implementuji algoritmus, který jsem dokázal v předchozí kapitole.
+\section*{Odvození vztahu}
 
+{\bf Značení:} Uvažujme \(e\), kde \(e \in \mathbb{Z}_{\geq 0}\). Pak \(\prescript{e}{}{a_i}\) je člen posloupnosti ve tvaru \(i^eq^i\) a  \(\prescript{e}{}{s_n} = \sum_{i = 0}^{n} \prescript{e}{}{a_i}\)\\\\\
+{\bf Věta 1:} Nechť \(q \in \mathbb{R}\setminus\{1\}\) \[\prescript{1}{}{s_n} = \frac{q}{q - 1}(nq^{n}+q^{n} - \frac{q^{n+1}-1}{q-1})  \]
+{\bf Lemma:} \[\prescript{0}{}{s_n} = \sum_{i=0}^{n} q^{i}=\frac{q^{i+1} - 1}{q - 1}\]
+Z definice platí, že: \begin{equation} \prescript{0}{}{s_{n+1}} = \prescript{0}{}{s_{n}} + q^{n+1}\end{equation}\\Dále uvedu ještě jeden vztah mezi \(\prescript{0}{}{s_{n+1}}\) a \(\prescript{0}{}{s_{n}}\), který již není tolik zřejmý. Vynasobením každého členu \(\prescript{e}{}{a_i}\) koeficientem \(q\) získám člen o stupeň větší, neboť platí:
+\[\prescript{0}{}{a_{n}}q=q^iq=q^{i+1}=\prescript{0}{}{a_{n+1}}\]Tím vytvořím posloupnost \(\prescript{0}{}{a_{1}}\dots\prescript{0}{}{a_{n+1}}\). Příčtením \(\prescript{0}{}{a_0}\) mi tedy vznikne posloupnost \(\prescript{0}{}
+{a_0}\dots\prescript{0}{}{a_{n+1}}\)
+a tudíž platí, že:
+\[\prescript{0}{}{s_{n+1}} = \prescript{0}{}{s_{n}}q + 1\]
+Dosadím vztah (1):
+\[\prescript{0}{}{s_n} + q^{n+1} = \prescript{0}{}{s_{n}}q + 1\]
+Vyjádřím si \(\prescript{0}{}{s_n}\) a získám námi hledaný tvar.
+\[\prescript{0}{}{s_{n}} =\frac{q^{n+1} - 1}{q - 1}\]
+{\it Důkaz:}\\\\Budu postupovat podobně jako v lemmatu. Z definice platí: \begin{equation} \prescript{1}{}{s_{n+1}} = \prescript{1}{}{s_{n}} + (n+1) q^{n+1}\end{equation}
+Mějme posloupnost \(\prescript{1}{}{a_{0}}\dots\prescript{1}{}{a_{n}}\).
+Ke každému členu \(\prescript{1}{}{a_{i}}\) přičtu odpovídající \(\prescript{0}{}{a_{i}}\). Takto získám novou posloupnost, kde každý člen odpovídá tvaru: \((x+1)q^x\). Náhlednu, že vynásobením členu \(q\) získám člen \(\prescript{1}{}{a_{i+1}}\).
+\[q(\prescript{1}{}{a_{i}}+\prescript{0}{}{a_{i}})=\prescript{1}{}{a_{i+1}}\]
+Z čehož plyne:
+\[\prescript{1}{}{s_{n+1}}=q(\prescript{1}{}{s_{n}} + \prescript{0}{}{s_{n}})\]
+Dosadím si vztahy (1), (2):
+\[\prescript{1}{}{s_{n}} + (n+1) q^{n+1}=q(\prescript{1}{}{s_{n}} + \frac{q^{n+1} - 1}{q - 1})\]
+Vyjádřím si \(\prescript{1}{}{s_{n}}\).
+\[\prescript{1}{}{s_{n}}=\frac{(n+1) q^{n+1} - q(\frac{q^{n+1} - 1}{q - 1} )}{q - 1}\]
+Výsledný vztah upravím na námi hledaný tvar:
+\[\prescript{1}{}{s_n} = \frac{q}{q - 1}(nq^{n}+q^{n} - \frac{q^{n+1}-1}{q-1})  \]
+{\bf Věta 2:}
+Nechť \(e > 0\), potom:
+\[\prescript{e}{}{s_{n}} = \frac{(n+1)^eq^{n+1} - q(\sum_{i=1}^{e}{e \choose i}\prescript{e-i}{}{s_{n}})}{q-1}\]
+Vyjádřím si rozdíl \(\frac{\prescript{e}{}{a_{n+1}}}{q}\) a \(\prescript{e}{}{a_{n}}\) pomocí binomické věty.
+\[\frac{\prescript{e}{}{a_{n+1}}}{q} -\prescript{e}{}{a_{n}}=(n+1)^eq^n - n^eq^n =\sum_{i=1}^{e}{e \choose i}n^{e - i}q^n\]
+Mějme opět posloupnost ve tvaru \((i^eq^i)_{i=0}^n\). Ke každému členu posloupnosti přičtu tento rozdíl a dostanu posloupnost. \(((i+1)^eq^i)_{i=0}^n\) Nyní vynásobím každý její člen \(q\).
 
-\section{Výpisy použitých programů}
-
-\lipsum[1]	
-
-Výpis programu \nameref{lst:hello_world}  naleznete ve výpise \ref{lst:hello_world}.
-
-\begin{lstlisting}[title={Generator.py}, caption={generator.py}, label={lst:hello_world}]
-import sympy
-from math import comb
-
-def hrubou_silou(vzorec, q, exp):
-    vzorec = vzorec.replace("q", str(q))
-    soucet = 0
-    for i in range(exp+1):
-        soucet += eval(vzorec.replace("x", str(i)))
-    return soucet
-
-def spocitej_mocniny(stupen):
-    nulty_clen = "(q**(x+1) - 1)/(q - 1)"
-    stupne = [sympy.sympify(nulty_clen)]
-    for exp in range(1, stupen+1):
-        novy_clen = sympy.sympify("0")
-        for k in range(exp):
-            novy_clen += sympy.sympify(comb(exp, k)*stupne[k])
-        novy_clen = sympy.sympify(f"""(x+1)**{exp}*q**(x+1)""") - sympy.sympify("q")*novy_clen
-        novy_clen /= sympy.sympify("q - 1")
-        stupne.append(sympy.simplify(novy_clen))
-    return stupne
-
-
-def vyres(clen):
-    clen = sympy.sympify(clen)
-
-q = 12
-x = 4
-s = 3
-vzorec = str(spocitej_mocniny(s)[s])
-print(vzorec)
-print(eval(vzorec.replace("q", str(q)).replace("x", str(x))))
-print(hrubou_silou(f"""x**{s}*q**x""", q, x))
-
-
-\end{lstlisting}
-
-\lipsum[1]	
-
-\begin{lstlisting}[numbers=none, title={Příklad výstupního souboru}]
-11.0524
-5.5954
-6.7996
-13.8584
-15.1357
-Soucet: 52.4415
-\end{lstlisting}
 
 	\chapter*{Závěr}
 	
@@ -187,8 +273,64 @@ Soucet: 52.4415
     \listoftables						% Vytvoří seznam tabulek
 
     \begin{appendices}
-	\chapter{Fotky z pokusů}	
-	\lipsum[1]
+	\chapter{Generátor vzorců v Pythonu}	
+	Na závěr implementuji algoritmus, který jsem odvodil v praktické části. Program přijímá jako vstup polynom, základ a maximální hodnotu x. Pro srovnání jsem do programu přidal funkci, která počítá součet hrubou silou, abych demonstroval, že se hodnoty skutečně rovnají a též tak zkontroloval svoji implementaci.
+
+\begin{lstlisting}[title={Generator.py}, caption={generator.py}, label={lst:hello_world}]
+# importovani modulu
+import sympy
+from math import comb
+import re
+
+def hrubou_silou(polynom, q, exp):
+	"""Reseni hrubou silou pro overeni spravnosti implementace."""
+    soucet = 0
+    for i in range(exp+1):
+        soucet += eval(polynom.replace("x", str(i)))*q**i
+    return soucet
+
+def spocitej_mocniny(stupen):
+	"""Funkce, ktera urci soucet jednotlivych x^i*q^i, pro 0 <= i <= maximalni stupen polynomu""" 
+    nulty_clen = "(q**(x+1) - 1)/(q - 1)"
+    stupne = [sympy.sympify(nulty_clen)]
+    for exp in range(1, stupen+1):
+        novy_clen = sympy.sympify("0")
+        for k in range(exp):
+            novy_clen += sympy.sympify(comb(exp, k)*stupne[k])
+        novy_clen = sympy.sympify(f"""(x+1)**{exp}*q**(x+1)""") - sympy.sympify("q")*novy_clen
+        novy_clen /= sympy.sympify("q - 1")
+        stupne.append(sympy.simplify(novy_clen))
+    return stupne
+
+def vyres(polynom, q, x):
+	"""Sestavi z jednotlivych vzorcu vzorec pro dany polynom, do ktereho dosadi spravna cisla."""
+    vzorec = sympy.sympify(polynom)
+    vzorec = vzorec.expand()
+    koeficienty = sympy.Poly(vzorec).all_coeffs()[::-1]
+    stupne = spocitej_mocniny(len(koeficienty) - 1)
+    soucet = 0
+    for index, k in enumerate(koeficienty):
+        val = str(stupne[index])
+        val = eval(val.replace("q", str("q").replace("x", str(x))))*k
+        soucet += val
+    return int(soucet)
+
+# Nacteni vstupu
+polynom = input()
+q = input()
+x = input()
+
+# Vystup
+print("Hruba sila:", hrubou_silou(polynom, q, x))
+print("Vzorcem:   ", vyres(polynom, q, x))
+
+\end{lstlisting}
+
+Výstup pro $q=10$, $x=5$ a polynom roven $100x^5 - 3x + 2587x(x + 1)$. Je vidět, že hodnoty se rovnají.
+\begin{lstlisting}[numbers=none, title={Výstup našeho programu}]
+Hruba sila: 40608039310
+Vzorcem:    40608039310
+\end{lstlisting}
     	%\pitem{Fotky z pokusů}
     	%\eitem{Vlastní program}
     	%\eitem{Dokumentace}
