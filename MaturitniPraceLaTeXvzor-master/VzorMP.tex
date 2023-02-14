@@ -74,6 +74,7 @@ Funkce jsou důležitým nástrojem v matematice a používají se v mnoha různ
 Pokud máme funkci $f$, pak množině $D$, na které je funkce $f$ definována, se říká \emph{definiční obor} funkce $f$ a značí se $D(f)$.
 		\paragraph{Definice 3 [Obor hodnot]:}
 Obor hodnot je množina všech reálných čísel $y$, která lze dostat jako výstupní hodnotu funkce $f$, jestliže se za $x$ dosadí všechny přípustné hodnoty z $D(f)$. Obor hodnot funkce $f$ se značí $H(f)$.
+\newpage
 				\subsection{Zadání funkce}
 Funkci lze zadat několika způsoby, ty nejvýznamnější si ukážeme na funkci $\sin(x)$.
 
@@ -102,7 +103,7 @@ Graf funkce $\sin(x)$ s oborem definice $D(f) = \langle 0, 2\pi \rangle$. Pro vi
 \end{center}
 
 		\section{Vysvětlení pojmu posloupnost}
-Posloupnost je funkce definovaná na množině přirozených čísel, což jsou celá kladná čísla (1, 2, 3 atd.). Stejně jako u funkce tedy platí, že se jedná o vztah mezi množinou vstupů a množinou možných výstupů s vlastností, že ke každému vstupu je přiřazený právě jeden výstup. Definiční obor posloupnosti může být buď konečná množina, pak se posloupnost nazývá \emph{konečná}, nebo \emph{nekonečná} množina, pak se posloupnost nazývá \emph{nekonečná}.
+Posloupnost je funkce definovaná na množině přirozených čísel\footnote{Někdy se posloupnosti indexují od $0$. Pro přehlednost jsem se ale rozhodl ponechat v teoretické části jen indexování od $1$.}, což jsou celá kladná čísla (1, 2, 3 atd.). Stejně jako u funkce tedy platí, že se jedná o vztah mezi množinou vstupů a množinou možných výstupů s vlastností, že ke každému vstupu je přiřazený právě jeden výstup. Definiční obor posloupnosti může být buď konečná množina, pak se posloupnost nazývá \emph{konečná}, nebo \emph{nekonečná} množina, pak se posloupnost nazývá \emph{nekonečná}.
 		\section{Značení}
 Prvky z definičního oboru posloupnosti $(a_n)$ budu označovat $n$ a funkční hodnoty posloupnosti $(a_n)$ označovat $a_n$. Platí tedy, že $n$-tému prvku je přiřazena hodnota $a_n$.
 		\subsection{Značení nekonečné posloupnosti}
@@ -154,8 +155,6 @@ Konečnou posloupnost, kde $n \le k$ potom lze zapsat kupříkladu takto:
 \[a_n = 2n + 1 \quad n \le k \quad n \in \mathbb{N}\]
 \subsection{Rekurentní vzorec}
 Rekurentní vzorec určuje člen posloupnosti pomocí znalosti jednoho nebo více předcházejících členů. Tento způsob je užitečný zejména u posloupností, které mají složitý předpis a nelze je snadno definovat pomocí jediného vzorce. Známým příkladem je Fibonacciho posloupnost.
-
-Člen posloupnosti an můžeme určit jen tehdy, pokud známe členy předcházející, tedy časová složitost určení n-tého prvku je $O(n)$. 
 \subsubsection{Příklad na Fibonacciho posloupnosti:}
 Fibonacciho posloupnost, poprvé popsána v indické matematice již 200 let př. n. l., je posloupnost čísel, ve které je každé číslo, kromě prvních dvou čísel,$0$ a $1$, součtem dvou předchozích, tedy $0, 1, 1, 2, 3, 5, 8, 13, 21$ atd. 
 \[
@@ -225,8 +224,79 @@ Posloupnost $(a_n)$ je zdola omezená, jestliže existuje $d \in \mathbb{R}$ tak
 \paragraph{Definice 12 [Omezená]:}
 Posloupnost $(a_n)$ je omezená, jestliže je shora i zdola omezená, tedy existují $h,d \in \mathbb{R}$ takové, že pro všechny $n \in D$ platí $d \leq a_n \leq h$.
 \chapter{Řady}
+
 Řada vznikne sečtením prvků posloupnosti. Pokud je posloupnost konečná, vznikne konečná řada, pokud je posloupnost nekonečná, vznikne sečtením jejích členů nekonečná řada. V textu jsem se zatím pojmu řada vyhýbal, i když by mohl být na mnoha místech užitečný, takže ho postupně do textu zařadím.
-	\part{Praktická část}
+
+\section{Definice}
+
+Je dána posloupnosti $(a_n)$. Výraz tvaru
+\begin{equation}
+a_1 + a_2 + a_3 + \dots + a_n + \dots
+\end{equation}
+je řada.
+
+\section{Konvergentní a divergentní řady}
+
+\paragraph{Definice 12 [Konvergentní řada]:}
+Řada se nazývá konvergentní, pokud je její součet reálné číslo. 
+\paragraph{Definice 13 [Divergentní řada]:}
+Řada se nazývá divergentní, pokud její součet není reálné číslo. 
+
+\chapter{Aritmetická posloupnost}
+
+Aritmetická posloupnost je posloupnost čísel, ve které je rozdíl mezi dvěma po sobě jdoucími členy vždy stejný. Tento společný rozdíl může být kladný, záporný nebo nulový a určuje rychlost změny posloupnosti a zda je posloupnost konstantní, rostoucí, či klesající.
+
+\paragraph{Definice 14 [Aritmetická posloupnost]:}
+
+Posloupnost $(a_n)$ se nazývá aritmetická právě tehdy, když $\exists d \in \mathbb{R} \ \forall n \in \mathbb{N}$ a platí, že $a_{n+1} = a_n + d$
+
+
+\section{Vyjádření pomocí vzorce}
+
+Aritmetická posloupnost se často vyjadřuje pomocí následujícího vzorce:
+\begin{equation}
+a_n  = a(1) + (n-1)d,
+\end{equation}
+kde $a(n)$ je $n$-tý člen posloupnosti, $a(1)$ je první člen a $d$ je rozdíl dvou po sobě jdoucích členů. \section{Součet}
+Součet prvních n členů aritmetické posloupnosti lze vyjádřit jako:
+\begin{equation}
+s_n=n\frac{a_1+a_n}{2}
+\end{equation}
+
+kde $a_1$ označuje první prvek a $a_n$ poslední.
+
+\chapter{Geometrická posloupnost}
+Geometrická posloupnost je posloupnost, kde je každý člen kromě prvního násobkem předchozího členu. Tento násobek, označovaný jako základ či kvocient může být kladný, záporný nebo nulový a určuje směr a rychlost změny posloupnosti.
+Geometrické posloupnosti nachází uplatnění v různých matematických souvislostech a lze je použít k modelování reálných jevů, které vykazují exponenciální růst nebo pokles, třeba ekonomický růst nebo šíření viru. Běžně se používají také v informatice, zejména při analýze algoritmů a datových struktur, kde se využívá například vztah pro součet nekonečné posloupnosti se základem $|q| < 1$. Tomuto uplatnění se budu věnovat později. 
+
+\paragraph{Definice 16 [Geometrická posloupnost:}
+Posloupnost $(an)$ se nazývá geometrická právě tehdy, když: 
+$$\exists q \in \mathbb{R} \forall n \in \mathbb{N}, a_{n+1} = a_n \cdot q$$
+\section{Vyjádření pomocí vzorců}
+Geometrická posloupnost se často znázorňuje pomocí následujícího vzorce:
+
+$$a_{n} = a_{1} \cdot q^{n-1}$$
+
+kde $a_{n}$ je n-tý člen posloupnosti, $a_{1}$ je první člen a $q$ je základ.
+Součet prvních $n$ členů geometrické posloupnosti se vyjádřuje jako:
+
+$$s_n = \frac{a_1 (q^n - 1)}{q-1}$$
+
+Odvození tohoto tvrzení bude poskytnuto v praktické části maturitní práce. Pokud platí, že $|q| < 1$, pak se součet pro $n$ se blížící nekonečnu limitně blíží k: $$\frac{a_1}{1-q}$$.
+\section{Určení asymptotické složitosti pomocí geometrické posloupnosti}
+Součet některých konvergujících geometrických posloupností nachází uplatnění třeba při určování časové složitosti algoritmu. Například při konstrukci haldy v $O(n)$\footnote{Pro vstup o délce $n$ potřebuje program řádově $n$ kroků k doběhnutí.}, při dynamickém zvětšování a zmenšování pole\supercite{1} nebo hashovací tabulky\cite{1} či u algoritmu Quickselect\cite{1} používaný k nalezení $k$-tého nejmenší prvku v poli, který má v průměru lineární časovou složitost.
+\chapter{Aritmeticko-geometrická posloupnost}
+Posloupnost aritmeticko-geometrická je posloupnost $a_1 b_1, a_2 b_2, \ldots, a_n b_n$, kde posloupnost $a_1, a_2, \ldots, a_n$ je aritmetická a posloupnost $b_1, b_2, \ldots, b_n$ geometrická.
+\paragraph{Definice 16 [Aritmeticko-geometrická posloupnost]:}
+Posloupnost $(a_n)$ se nazývá aritmeticko-geometrická právě tehdy, když:
+$$a_n = (a + d(n-1)) \cdot bq^n, \quad n\in\mathbb{N}, \quad a,b,q\in\mathbb{R}.$$
+\section{Součtový vzorec}
+Součet prvních $n$ prvků Aritmeticko-geometrické posloupnosti lze zapsat ve formě vzorce:
+$$s_n = \frac{a+dq\frac{1 - q^n}{1 - q} - (a + nd)q^n}{1-q}$$
+Součet odvodím ve svojí praktické části.
+\chapter{Obecná posloupnost ve tvaru součinu \\ polynomu a exponenciály}
+Při studiu geometrické a aritmeticko-geometrické posloupnosti jsem si uvědomil, že lze stejné schéma odvození součtového vzorce prvních $n$ prvků uplatnit i na libovolnou posloupnost ve tvaru $a_n = (n-1)^kq^{n-1}$, kde $k$ je libovolné nezáporné celé číslo. Nadefinoval jsem si tedy $a$ a sečetl prvních $n$ prvků posloupnosti ve tvaru $a_n = a\cdot p(n-1)\cdot q^{n-1}$, kde $p(n-1)$ představuje libovolný polynom. V závěru praktické části maturitní práce představím odvození rekurentního vztahu pro určení součtového vzorce prvních $n$ prvků posloupnosti $a_n = (n-1)^kq^{n-1}$ a využiji pravidla distributivnosti, se kterým demonstruji, jak lze tento rekurentní vztah využít pro součet prvních $n$ prvků posloupnosti tvaru $a\cdot p(n-1)\cdot q^{n-1}$.
+\part{Praktická část}
 \section*{Odvození vztahu}
 
 {\bf Značení:} Uvažujme \(e\), kde \(e \in \mathbb{Z}_{\geq 0}\). Pak \(\prescript{e}{}{a_i}\) je člen posloupnosti ve tvaru \(i^eq^i\) a  \(\prescript{e}{}{s_n} = \sum_{i = 0}^{n} \prescript{e}{}{a_i}\)\\\\\
@@ -262,6 +332,7 @@ Mějme opět posloupnost ve tvaru \((i^eq^i)_{i=0}^n\). Ke každému členu posl
 
 
 	\chapter*{Závěr}
+	
 	
 		\lipsum[1]
 	
